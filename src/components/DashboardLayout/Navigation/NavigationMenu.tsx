@@ -1,12 +1,12 @@
 import React, { FC } from 'react';
-import { SidebarMenuItem } from './SidebarMenuItem';
+import { NavigationMenuItem } from './NavigationMenuItem';
 import {
   DashboardIcon,
   ScheduleIcon,
   SettingsIcon,
   TransactionIcon,
   UserIcon,
-} from '../common/icons';
+} from '../../common/icons';
 import { useRouter } from 'next/router';
 
 type Props = {
@@ -41,12 +41,12 @@ const menuItems = [
   },
 ];
 
-const SidebarMenu: FC<Props> = ({ className }) => {
+const NavigationMenu: FC<Props> = ({ className }) => {
   const router = useRouter();
   return (
     <div className={`text-white flex-grow ${className}`}>
       {menuItems.map((item) => (
-        <SidebarMenuItem
+        <NavigationMenuItem
           key={item.text}
           {...item}
           className={`${router.pathname === item.href ? 'font-bold' : ''}`}
@@ -56,4 +56,4 @@ const SidebarMenu: FC<Props> = ({ className }) => {
   );
 };
 
-export default SidebarMenu;
+export default NavigationMenu;

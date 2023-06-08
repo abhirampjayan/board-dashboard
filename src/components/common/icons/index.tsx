@@ -5,6 +5,7 @@ import { ScheduleIcon } from './ScheduleIcon';
 import { SettingsIcon } from './SettingsIcon';
 import { TransactionIcon } from './TransactionIcon';
 import { UserIcon } from './UserIcon';
+import { SearchIcon } from './SearchIcon';
 
 export {
   GoogleIcon,
@@ -14,4 +15,5 @@ export {
   SettingsIcon,
   TransactionIcon,
   UserIcon,
+  SearchIcon,
 };

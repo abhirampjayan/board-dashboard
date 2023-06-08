@@ -1,11 +1,9 @@
 import OAuth from '@/components/HomePage/OAuth';
 import SiginInForm from '@/components/HomePage/SiginInForm';
-import { LoginIconButton } from '@/components/common/LoginIconButton';
-import { AppleIcon, GoogleIcon } from '@/components/common/icons';
 import LandingLayout from '@/components/layouts/LandingLayout';
 import { montserrat } from '@/configs/fonts';
 import { NextPageWithLayout } from '@/utils/types';
-import { signIn, signOut, useSession } from 'next-auth/react';
+import { signOut, useSession } from 'next-auth/react';
 import Link from 'next/link';
 import React, { ReactElement } from 'react';
 

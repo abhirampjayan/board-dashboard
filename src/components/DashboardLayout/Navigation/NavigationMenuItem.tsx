@@ -8,7 +8,7 @@ type Props = {
   className?: string;
 };
 
-export const SidebarMenuItem = ({
+export const NavigationMenuItem = ({
   icon,
   text,
   href = '',

@@ -1,16 +1,37 @@
-import Sidebar from '@/components/DashboardLayout/Sidebar';
+import Search from '@/components/DashboardLayout/Search';
+import Sidebar from '@/components/DashboardLayout/Navigation';
+import { NotificationIcon } from '@/components/common/icons/NotificationIcon';
 import { montserrat } from '@/configs/fonts';
 import { NextPageWithLayout } from '@/utils/types';
+import { Session, getServerSession } from 'next-auth';
 import React, { ReactElement } from 'react';
+import { authOptions } from './api/auth/[...nextauth]';
+import Avatar from '@/components/common/Avatar';
+import Header from '@/components/common/Header';
 
-type Props = {};
+type Props = {
+  data: Session;
+};
+
+export async function getServerSideProps(context: any) {
+  let session = await getServerSession(context.req, context.res, authOptions);
+  if (!session) {
+    return {
+      redirect: {
+        destination: '/',
+        permanent: false,
+      },
+    };
+  }
+  return {
+    props: { data: session },
+  };
+}
 
 const Dashboard: NextPageWithLayout<Props> = (props) => {
   return (
     <>
-      <div className='h-[52-px] flex'>
-        <h2 className={`font-bold text-[24px] ${montserrat.className}`}>Dashboard</h2>
-      </div>
+      <Header title='Dashboard' />
     </>
   );
 };
