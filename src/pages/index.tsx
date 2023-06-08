@@ -1,3 +1,4 @@
+import OAuth from '@/components/HomePage/OAuth';
 import SiginInForm from '@/components/HomePage/SiginInForm';
 import { LoginIconButton } from '@/components/common/LoginIconButton';
 import { AppleIcon, GoogleIcon } from '@/components/common/icons';
@@ -20,18 +21,7 @@ const Home: NextPageWithLayout<Props> = () => {
         </h1>
         <div>Sign in to your account</div>
         <div className='w-full mt-5 md:mt-[26px]'>
-          <div className='grid grid-cols-2 gap-3 md:gap-6'>
-            <LoginIconButton
-              icon={<GoogleIcon />}
-              text='Sign in with Google'
-              onClick={() => signIn('google', { callbackUrl: '/dashboard' })}
-            />
-            <LoginIconButton
-              onClick={() => signIn('apple', { callbackUrl: '/dashboard' })}
-              icon={<AppleIcon />}
-              text='Sign in with Apple'
-            />
-          </div>
+          <OAuth />
           <SiginInForm />
         </div>
         <div className='mt-[20px] flex justify-center'>
