@@ -18,6 +18,9 @@ module.exports = {
         //   lg: '1440px',
         md2: '1024px',
       },
+      colors: {
+        statusGreen: '#DDEFE0',
+      },
     },
   },
   plugins: [],

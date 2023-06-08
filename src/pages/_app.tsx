@@ -2,7 +2,10 @@ import { lato } from '@/configs/fonts';
 import '@/styles/globals.css';
 import { NextPageWithLayout } from '@/utils/types';
 import type { AppProps } from 'next/app';
-import { SessionProvider } from "next-auth/react"
+import { SessionProvider } from 'next-auth/react';
+import axios from 'axios';
+
+axios.defaults.baseURL = 'http://localhost:3000/api';
 
 type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout;

@@ -1,4 +1,4 @@
-import { Lato, Montserrat } from 'next/font/google';
+import { Lato, Montserrat, Open_Sans } from 'next/font/google';
 
 export const lato = Lato({
   weight: '400',
@@ -7,5 +7,9 @@ export const lato = Lato({
 });
 
 export const montserrat = Montserrat({
+  subsets: ['latin'],
+});
+
+export const openSans = Open_Sans({
   subsets: ['latin'],
 });

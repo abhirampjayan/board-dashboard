@@ -6,6 +6,10 @@ import { SettingsIcon } from './SettingsIcon';
 import { TransactionIcon } from './TransactionIcon';
 import { UserIcon } from './UserIcon';
 import { SearchIcon } from './SearchIcon';
+import { TotalUsers } from './TotalUsers';
+import { TotalLikesIcon } from './TotalLikesIcon';
+import { TotalRevenueIcon } from './TotalRevenueIcon';
+import { TotalTxnIcon } from './TotalTxnIcon';
 
 export {
   GoogleIcon,
@@ -16,4 +20,8 @@ export {
   TransactionIcon,
   UserIcon,
   SearchIcon,
+  TotalUsers,
+  TotalLikesIcon,
+  TotalRevenueIcon,
+  TotalTxnIcon,
 };
