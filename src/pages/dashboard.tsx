@@ -26,7 +26,7 @@ export async function getServerSideProps(context: any) {
       },
     };
   }
-  const status = await axios.get('http://localhost:3000/api/portal/status');
+  const status = await axios.get(`${process.env.NEXTAUTH_URL}/api/portal/status`);
 
   return {
     props: { data: { session, status: status.data } },
