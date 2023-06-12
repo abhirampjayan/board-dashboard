@@ -10,11 +10,12 @@ import { StatusRespose } from '@/utils/types';
 
 type Props = {
   status: StatusRespose;
+  className?: string;
 };
 
-const Status = ({ status }: Props) => {
+const Status = ({ status, className = '' }: Props) => {
   return (
-    <div className={`mt-[40px] grid gap-[36px] grid-cols-4`}>
+    <div className={`grid gap-[36px] grid-cols-4 ${className}`}>
       <StatusTile
         className='bg-statusGreen'
         title='Total Revenues'

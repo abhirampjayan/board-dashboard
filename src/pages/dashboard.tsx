@@ -6,6 +6,10 @@ import { authOptions } from './api/auth/[...nextauth]';
 import Header from '@/components/common/Header';
 import Status from '@/components/common/Status';
 import axios from 'axios';
+import Activities from '@/components/DashboardLayout/Activities';
+import Head from 'next/head';
+import TopProducts from '@/components/DashboardLayout/TopProducts';
+import Schedule from '@/components/DashboardLayout/Schedule';
 
 type Props = {
   data: { data: Session; status: StatusRespose };
@@ -23,7 +27,6 @@ export async function getServerSideProps(context: any) {
     };
   }
   const status = await axios.get('http://localhost:3000/api/portal/status');
-  console.log(status.data);
 
   return {
     props: { data: { session, status: status.data } },
@@ -33,8 +36,16 @@ export async function getServerSideProps(context: any) {
 const Dashboard: NextPageWithLayout<Props> = ({ data }) => {
   return (
     <>
+      <Head>
+        <title>Dashboard</title>
+      </Head>
       <Header title='Dashboard' />
-      <Status status={data.status} />
+      <div className='mt-[40px] grid grid-cols-12 overflow-y-auto no-scrollbar gap-10'>
+        <Status className='col-span-12' status={data.status} />
+        <Activities className='col-span-12 max-h-min' />
+        <TopProducts className='col-span-6' />
+        <Schedule className='col-span-6' />
+      </div>
     </>
   );
 };
