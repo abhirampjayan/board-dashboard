@@ -12,9 +12,9 @@ import {
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
 import { _DeepPartialObject } from 'chart.js/dist/types/utils';
-import LegendItem from './LegendItem';
+import LegendItem from '../../common/LegendItem';
 import Card from '@/components/common/Card';
-import { lineGraphOptions } from '@/configs/linkGraphOptions';
+import { lineGraphOptions } from '@/configs/graphOptions';
 
 type Props = {
   className?: string;
@@ -44,7 +44,7 @@ const Activities = ({ className }: Props) => {
           <LegendItem backgroundColor='#9BDD7C' text='User' />
         </div>
       </div>
-      <div className='w-full max-h-[300px] mt-[40px]'>
+      <div className='w-full max-h-[200px] mt-[30px]'>
         <Line
           className='w-full h-full'
           options={lineGraphOptions}

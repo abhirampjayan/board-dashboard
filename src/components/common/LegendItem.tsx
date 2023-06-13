@@ -1,11 +1,7 @@
+import { LegendItemProps } from '@/utils/types';
 import React from 'react';
 
-type Props = {
-  backgroundColor: string;
-  text: string;
-};
-
-const LegendItem = ({ backgroundColor, text }: Props) => {
+const LegendItem = ({ backgroundColor, text }: LegendItemProps) => {
   return (
     <div className='flex items-center'>
       <span

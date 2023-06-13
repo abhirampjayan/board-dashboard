@@ -5,7 +5,7 @@ import type { AppProps } from 'next/app';
 import { SessionProvider } from 'next-auth/react';
 import axios from 'axios';
 
-axios.defaults.baseURL = 'http://localhost:3000/api';
+axios.defaults.baseURL = `${process.env.NEXTAUTH_URL}/api`;
 
 type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout;

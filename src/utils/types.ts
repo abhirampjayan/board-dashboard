@@ -13,3 +13,8 @@ export interface StatusItem {
 export interface StatusRespose {
   [key: string]: StatusItem;
 }
+
+export interface LegendItemProps {
+  backgroundColor: string;
+  text: string;
+}
